@@ -1,10 +1,5 @@
-
 import React from 'react'
 
-class Sample extends React.Component {
-    render() {
-        return <h1>Hello</h1>
-    }
-}
+const Sample = () => <div>Hello</div>
 
 export default Sample

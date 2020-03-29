@@ -5,6 +5,7 @@
     },
     "extends": [
       "airbnb-base",
+      "plugin:codeceptjs/recommended",
       "plugin:react/recommended",
       "plugin:jest/recommended"
     ],
@@ -12,16 +13,13 @@
       "Atomics": "readonly",
       "SharedArrayBuffer": "readonly"
     },
+    "parser": "babel-eslint",
     "parserOptions": {
       "ecmaVersion": 2018,
       "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
+      "ecmaFeatures": { "jsx": true }
     },
-    "plugins": [
-      "react"
-    ],
+    "plugins": [ "react" ],
     "rules": {
       "indent": ["error", 4],
       "semi": [ 2, "never" ],
