@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+require('webpack')
 const path = require('path')
 
 const config = {
@@ -52,6 +52,7 @@ const config = {
         },
     },
     devServer: {
+        historyApiFallback: true,
         contentBase: './dist',
     },
 }
