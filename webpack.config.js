@@ -1,5 +1,7 @@
 require('webpack')
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackTemplate = require('html-webpack-template')
 
 const config = {
     entry: [
@@ -9,6 +11,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
+        publicPath: '',
     },
     module: {
         rules: [
@@ -23,6 +26,13 @@ const config = {
                     'style-loader',
                     'css-loader',
                     'sass-loader',
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
                 ],
             },
             {
@@ -55,6 +65,14 @@ const config = {
         historyApiFallback: true,
         contentBase: './dist',
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: HtmlWebpackTemplate,
+            appMountId: 'app',
+            title: 'ReactStarter',
+            meta: { viewport: 'width=device-width, initial-scale=1, maximum-scale=1' },
+        }),
+    ],
 }
 
 module.exports = config
