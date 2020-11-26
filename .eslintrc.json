@@ -1,34 +1,54 @@
 {
-    "env": {
-      "es6": true,
-      "browser": true
-    },
-    "extends": [
-      "airbnb-base",
-      "plugin:codeceptjs/recommended",
-      "plugin:react/recommended",
-      "plugin:jest/recommended"
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:codeceptjs/recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      4
     ],
-    "globals": {
-      "Atomics": "readonly",
-      "SharedArrayBuffer": "readonly"
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module",
-      "ecmaFeatures": { "jsx": true }
-    },
-    "plugins": [ "react" ],
-    "rules": {
-      "indent": ["error", 4],
-      "semi": [ 2, "never" ],
-      "max-len": [ "error", { "code": 125 } ],
-      "jest/no-identical-title": "error",
-      "jest/consistent-test-it": "warn",
-      "jest/expect-expect": "warn",
-      "jest/no-commented-out-tests": "error",
-      "jest/no-disabled-tests": "error",
-      "jest/no-focused-tests": "error" 
+    "semi": [
+      2,
+      "never"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 125
+      }
+    ],
+    "jest/no-identical-title": "error",
+    "jest/consistent-test-it": "warn",
+    "jest/expect-expect": "warn",
+    "jest/no-commented-out-tests": "error",
+    "jest/no-disabled-tests": "error",
+    "jest/no-focused-tests": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "latest"
     }
   }
+}
